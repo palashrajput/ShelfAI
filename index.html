@@ -36,27 +36,26 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);min
 .reveal{opacity:0;transform:translateY(20px);transition:opacity .6s var(--ease),transform .6s var(--ease)}
 .reveal.visible{opacity:1;transform:translateY(0)}
 
-/* FLOATING NAV — appears on scroll */
-.float-nav{position:fixed;top:16px;left:50%;transform:translateX(-50%);z-index:100;
-  background:rgba(255,255,255,.95);backdrop-filter:blur(16px);
-  border:1px solid var(--border);border-radius:100px;
-  display:flex;align-items:center;gap:8px;padding:8px 8px 8px 20px;
-  box-shadow:var(--shadow-lg);
-  opacity:0;pointer-events:none;
-  transition:opacity .4s var(--ease),transform .4s var(--ease);
-  transform:translateX(-50%) translateY(-8px)}
-.float-nav.visible{opacity:1;pointer-events:all;transform:translateX(-50%) translateY(0)}
-.float-logo{font-family:'Plus Jakarta Sans',sans-serif;font-size:16px;font-weight:800;
+/* MINIMAL STICKY NAV — logo only */
+.top-bar{position:sticky;top:0;z-index:100;padding:14px 24px;
+  background:rgba(255,255,255,.95);backdrop-filter:blur(12px);
+  border-bottom:1px solid transparent;transition:border-color .3s}
+.top-bar.scrolled{border-bottom-color:var(--border)}
+.top-bar-inner{display:flex;align-items:center;justify-content:space-between;
+  max-width:var(--max);margin:0 auto}
+.top-logo{font-family:'Plus Jakarta Sans',sans-serif;font-size:18px;font-weight:800;
   color:var(--text);text-decoration:none;letter-spacing:-.02em}
-.float-logo span{color:var(--accent)}
-.float-links{display:flex;align-items:center;gap:2px}
-.float-link{font-size:13px;font-weight:500;color:var(--text-2);text-decoration:none;
+.top-logo span{color:var(--accent)}
+.top-links{display:flex;align-items:center;gap:6px}
+.top-link{font-size:14px;font-weight:500;color:var(--text-2);text-decoration:none;
   padding:6px 12px;border-radius:100px;transition:color .2s,background .2s}
-.float-link:hover{color:var(--text);background:var(--hover)}
-.float-cta{font-size:13px;font-weight:700;color:#fff;text-decoration:none;
-  padding:8px 18px;background:var(--text);border-radius:100px;
-  transition:opacity .2s}
-.float-cta:hover{opacity:.85}
+.top-link:hover{color:var(--text);background:var(--hover)}
+.top-cta{font-size:13px;font-weight:700;color:#fff;text-decoration:none;
+  padding:8px 18px;background:var(--text);border-radius:100px;transition:opacity .2s}
+.top-cta:hover{opacity:.8}
+@media(max-width:600px){
+  .top-links{display:none}
+}
 
 /* HERO */
 .hero{max-width:var(--max);margin:0 auto;padding:64px 24px 72px}
@@ -261,18 +260,16 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);min
   color:var(--green);margin-bottom:12px}
 .managed-badge span{width:5px;height:5px;border-radius:50%;background:var(--green);
   animation:epulse 2s ease-in-out infinite;display:inline-block}
-.price-pill{display:flex;align-items:center;gap:0;margin-top:20px;
+.price-pill{display:flex;align-items:stretch;gap:0;margin-top:20px;
   background:var(--bg-2);border:1px solid var(--border);border-radius:var(--r-lg);
-  overflow:hidden;width:fit-content}
-.price-pill-item{padding:14px 24px}
+  overflow:hidden;width:fit-content;max-width:100%}
+.price-pill-item{padding:16px 28px;flex:1}
 .price-pill-item+.price-pill-item{border-left:1px solid var(--border)}
 .price-pill-lbl{font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;
-  color:var(--text-3);margin-bottom:4px}
-.price-pill-num{font-family:'Plus Jakarta Sans',sans-serif;font-size:26px;font-weight:800;
+  color:var(--text-3);margin-bottom:6px}
+.price-pill-num{font-family:'Plus Jakarta Sans',sans-serif;font-size:28px;font-weight:800;
   color:var(--text);line-height:1}
 .price-pill-mo{font-size:13px;font-weight:500;color:var(--text-3)}
-.price-pill-cancel{padding:14px 20px;font-size:12px;font-weight:600;
-  color:var(--green);border-left:1px solid var(--border);white-space:nowrap}
 .pfeatures{padding:24px 32px;border-bottom:1px solid var(--border)}
 .ftitle{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;
   color:var(--text-3);margin-bottom:18px}
@@ -362,26 +359,40 @@ footer{border-top:1px solid var(--border);background:var(--bg-2);padding:24px 40
 .footer-links a{font-size:13px;color:var(--text-3);text-decoration:none;transition:color .2s}
 .footer-links a:hover{color:var(--text)}
 
-/* WHO ITS FOR GRID */
+.step-mobile-num{display:none}
 .biz-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:40px}
 
 @media(max-width:800px){
-  .hero{padding:48px 20px 60px}
-  .wrap{padding:60px 20px}
+  .hero{padding:48px 16px 60px}
+  .wrap{padding:56px 16px}
   .hero-grid{grid-template-columns:1fr;gap:32px}
   .hero-img-wrap{order:-1}
   .prob-grid,.biz-grid{grid-template-columns:1fr}
-  .step{grid-template-columns:48px 1fr;gap:18px}
-  .snum{width:48px;height:48px;font-size:17px}
-  .steps::before{left:23px}
-  .step-line{left:23px}
-  .pfeatures,.ptop,.pfooter{padding:20px}
+
+  /* Steps — remove number column, full width on mobile */
+  .steps::before{display:none}
+  .step-line{display:none}
+  .step{grid-template-columns:1fr;gap:8px;padding-bottom:36px}
+  .snum{display:none}
+  .sbody{padding-top:0}
+  .step-mobile-num{display:inline-flex;align-items:center;justify-content:center;
+    width:28px;height:28px;border-radius:50%;background:var(--text);
+    color:#fff;font-family:'Plus Jakarta Sans',sans-serif;font-size:13px;font-weight:800;
+    margin-bottom:10px;flex-shrink:0}
+  /* Calculator padding */
+  .calc-wrap{padding:24px 16px}
+  .calc-row,.calc-result{grid-template-columns:1fr}
+
+  /* Pricing */
+  .pfeatures,.ptop,.pfooter{padding:20px 16px}
+  .price-pill{width:100%}
+  .price-pill-item{padding:14px 16px}
+
+  /* CTA */
   .bcard{grid-template-columns:1fr;padding:40px 24px;gap:32px}
   .bcard-visual{display:none}
-  .bcta-wrap{padding:60px 20px}
-  footer{padding:20px}
-  .calc-row,.calc-result{grid-template-columns:1fr}
-  .price-pill{flex-wrap:wrap}
+  .bcta-wrap{padding:60px 16px}
+  footer{padding:20px 16px}
 }
 @media(max-width:480px){
   .hero-h1{font-size:26px}
@@ -395,15 +406,17 @@ footer{border-top:1px solid var(--border);background:var(--bg-2);padding:24px 40
 <body>
 <div class="page">
 
-<!-- FLOATING NAV -->
-<nav class="float-nav" id="floatNav">
-  <a class="float-logo" href="#">Shelf<span>AI</span></a>
-  <div class="float-links">
-    <a href="#how-it-works" class="float-link">How It Works</a>
-    <a href="#pricing" class="float-link">Pricing</a>
+<!-- TOP BAR -->
+<div class="top-bar" id="topBar">
+  <div class="top-bar-inner">
+    <a class="top-logo" href="#">Shelf<span>AI</span></a>
+    <div class="top-links">
+      <a href="#how-it-works" class="top-link">How It Works</a>
+      <a href="#pricing" class="top-link">Pricing</a>
+      <a href="https://calendly.com/palashrajput/30min/" target="_blank" class="top-cta">Book a Demo</a>
+    </div>
   </div>
-  <a href="https://calendly.com/palashrajput/30min/" target="_blank" class="float-cta">Book a Demo</a>
-</nav>
+</div>
 
 <!-- HERO -->
 <div class="hero">
@@ -423,7 +436,7 @@ footer{border-top:1px solid var(--border);background:var(--bg-2);padding:24px 40
         <p class="ptxt">Works for <strong>cafes, bakeries, delis, salons</strong> and any small business with inventory</p>
       </div>
     </div>
-    <div class="hero-img-wrap">
+    <div class="hero-img-wrap" style="order:2">
       <div class="hero-chat-card">
         <div class="chat-header">
           <div class="chat-avatar">🤖</div>
@@ -603,6 +616,7 @@ footer{border-top:1px solid var(--border);background:var(--bg-2);padding:24px 40
       <div class="snum">1</div>
       <div class="sbody">
         <div class="shdr">
+          <div class="step-mobile-num">1</div>
           <h3>Connect to What You Already Have</h3>
           <p>We connect ShelfAI to your existing Google Sheet, Airtable, Notion, or any spreadsheet. Nothing about how your data is stored changes — we just add a conversational layer on top.</p>
         </div>
@@ -622,6 +636,7 @@ footer{border-top:1px solid var(--border);background:var(--bg-2);padding:24px 40
       <div class="snum">2</div>
       <div class="sbody">
         <div class="shdr">
+          <div class="step-mobile-num">2</div>
           <h3>Ask Questions, Make Updates — By Chat</h3>
           <p>Once connected, you manage inventory entirely through conversation. Ask what is low. Say what arrived. Tell it what was used. ShelfAI updates your inventory in real time.</p>
         </div>
@@ -641,6 +656,7 @@ footer{border-top:1px solid var(--border);background:var(--bg-2);padding:24px 40
       <div class="snum">3</div>
       <div class="sbody">
         <div class="shdr">
+          <div class="step-mobile-num">3</div>
           <h3>Get Alerts Before Problems Happen</h3>
           <p>Every evening ShelfAI checks your inventory automatically and sends a summary. You see what needs ordering before the next morning — not after you run out.</p>
         </div>
@@ -659,6 +675,7 @@ footer{border-top:1px solid var(--border);background:var(--bg-2);padding:24px 40
       <div class="snum">4</div>
       <div class="sbody">
         <div class="shdr">
+          <div class="step-mobile-num">4</div>
           <h3>Your Existing System Stays Accurate Automatically</h3>
           <p>Every update made through chat reflects instantly in your original spreadsheet or database. Your team accesses it the same way they always have — ShelfAI just keeps it accurate.</p>
         </div>
@@ -715,8 +732,8 @@ footer{border-top:1px solid var(--border);background:var(--bg-2);padding:24px 40
             <div class="price-pill-lbl">Then monthly</div>
             <div class="price-pill-num">$79 <span class="price-pill-mo">/mo</span></div>
           </div>
-          <div class="price-pill-cancel">cancel anytime ✓</div>
         </div>
+        <div style="margin-top:10px;font-size:13px;font-weight:600;color:var(--green)">✓ Cancel anytime — no contracts, no lock-in</div>
       </div>
       <div class="pfeatures">
         <p class="ftitle">Everything Included</p>
@@ -831,11 +848,11 @@ function faq(btn) {
   if (!isOpen) item.classList.add('open');
 }
 
-// Floating nav on scroll
-const floatNav = document.getElementById('floatNav');
+// Top bar scroll border
+const topBar = document.getElementById('topBar');
 window.addEventListener('scroll', () => {
-  if (window.scrollY > 80) floatNav.classList.add('visible');
-  else floatNav.classList.remove('visible');
+  if (window.scrollY > 40) topBar.classList.add('scrolled');
+  else topBar.classList.remove('scrolled');
 }, { passive: true });
 
 // Reveal

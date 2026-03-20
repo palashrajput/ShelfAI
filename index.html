@@ -368,6 +368,9 @@ footer{border-top:1px solid var(--border);background:var(--bg-2);padding:24px 40
   .hero-img-wrap{order:-1}
   .prob-grid,.biz-grid{grid-template-columns:1fr}
 
+  /* Video — full bleed on mobile */
+  .video-wrap{border-radius:var(--r-md);margin-left:-16px;margin-right:-16px;width:calc(100% + 32px)}
+
   /* Steps — remove number column, full width on mobile */
   .steps::before{display:none}
   .step-line{display:none}
@@ -382,10 +385,11 @@ footer{border-top:1px solid var(--border);background:var(--bg-2);padding:24px 40
   .calc-wrap{padding:24px 16px}
   .calc-row,.calc-result{grid-template-columns:1fr}
 
-  /* Pricing */
+  /* Pricing — cancel anytime wraps fix */
   .pfeatures,.ptop,.pfooter{padding:20px 16px}
   .price-row{width:100%}
-  .price-col{padding:16px 18px}
+  .price-col{padding:14px 14px}
+  .price-col-num{font-size:22px}
 
   /* CTA */
   .bcard{grid-template-columns:1fr;padding:40px 24px;gap:32px}
@@ -506,7 +510,7 @@ footer{border-top:1px solid var(--border);background:var(--bg-2);padding:24px 40
 <!-- PROBLEM -->
 <div class="wrap">
   <p class="sec-lbl reveal">The Problem</p>
-  <h2 class="sec-h2 reveal">Small business owners are losing money<br><span class="hl-accent">to a problem they cannot see.</span></h2>
+  <h2 class="sec-h2 reveal">Small business owners are losing money <span class="hl-accent">to a problem they cannot see.</span></h2>
   <div class="prob-grid">
     <div class="prob-card reveal">
       <div class="prob-icon">😬</div>

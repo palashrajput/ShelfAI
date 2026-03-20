@@ -405,88 +405,69 @@ footer{border-top:1px solid var(--border);background:var(--bg-2);padding:24px 40
 <body>
 <div class="page">
 
-<!-- TOP BAR -->
-<div class="top-bar" id="topBar">
-  <div class="top-bar-inner">
-    <a class="top-logo" href="#">Shelf<span>AI</span></a>
-    <div class="top-links">
-      <a href="#how-it-works" class="top-link">How It Works</a>
-      <a href="#pricing" class="top-link">Pricing</a>
-      <a href="https://calendly.com/palashrajput/30min/" target="_blank" class="top-cta">Book a Demo</a>
-    </div>
-  </div>
+<!-- BRAND BAR -->
+<div style="padding:16px 24px;display:flex;align-items:center;justify-content:space-between;max-width:var(--max);margin:0 auto">
+  <a href="#" style="font-family:'Plus Jakarta Sans',sans-serif;font-size:18px;font-weight:800;color:var(--text);text-decoration:none;letter-spacing:-.02em">Shelf<span style="color:var(--accent)">AI</span></a>
+  <a href="https://calendly.com/palashrajput/30min/" target="_blank" class="btn-p" style="padding:9px 20px;font-size:14px">Book a Call</a>
 </div>
 
 <!-- HERO -->
-<div class="hero">
-  <div class="hero-grid">
-    <div class="hero-content">
-      <div class="eyebrow"><span class="edot"></span>AI Inventory Assistant</div>
-      <h1 class="hero-h1">Your inventory system already exists.<br><span class="hl">Now give it a brain.</span></h1>
-      <p class="hero-sub">ShelfAI plugs into your existing spreadsheet or inventory system and turns it into a conversational AI assistant — so you manage stock by just sending a message.</p>
-      <div class="hero-btns">
-        <a href="https://calendly.com/palashrajput/30min/" target="_blank" class="btn-p">Book a Free Demo →</a>
-        <a href="#how-it-works" class="btn-s">See how it works</a>
-      </div>
-      <div class="hero-proof">
-        <div class="pavs">
-          <div class="pav">☕</div><div class="pav">🥐</div><div class="pav">🧴</div><div class="pav">🛍️</div>
-        </div>
-        <p class="ptxt">Works for <strong>cafes, bakeries, delis, salons</strong> and any small business with inventory</p>
-      </div>
+<div class="hero" style="padding-top:40px;padding-bottom:0">
+  <div style="text-align:center;max-width:680px;margin:0 auto;padding:0 24px">
+    <div class="eyebrow" style="display:inline-flex"><span class="edot"></span>AI Inventory Assistant</div>
+    <h1 class="hero-h1" style="font-size:clamp(28px,3.2vw,42px);margin-top:8px">Your inventory system already exists. <span class="hl">Now give it a brain.</span></h1>
+    <p class="hero-sub" style="max-width:520px;margin:0 auto 40px">ShelfAI plugs into your spreadsheet and turns it into an AI assistant — manage stock <span style="background:linear-gradient(135deg,var(--accent),var(--accent-2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;font-weight:700">by just sending a message.</span></p>
+  </div>
+  <div style="max-width:var(--max);margin:0 auto;padding:0 24px">
+    <div class="video-wrap" style="margin-top:0;border-radius:var(--r-xl)">
+      <iframe src="https://www.youtube.com/embed/S9KCrsRTFUA?rel=0" title="ShelfAI Demo" allowfullscreen allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
     </div>
-    <div class="hero-img-wrap" style="order:2">
-      <div class="hero-chat-card">
-        <div class="chat-header">
-          <div class="chat-avatar">🤖</div>
-          <div>
-            <div class="chat-name">ShelfAI</div>
-            <div class="chat-status">● Connected to your inventory</div>
-          </div>
-        </div>
-        <div class="chat-messages">
-          <div class="msg msg-user">what's running low?</div>
-          <div class="msg msg-bot">
-            <div class="msg-tag">ShelfAI</div>
-            3 items need restocking:<br><br>
-            • Oat Milk — 2L left (min 8L)<br>
-            • Takeaway Cups — 40 left (min 100)<br>
-            • Vanilla Syrup — 1 bottle left<br><br>
-            Everything else is good ✅
-          </div>
-          <div class="msg msg-user">got 6 boxes of cups today</div>
-          <div class="msg msg-bot">
-            <div class="msg-tag">ShelfAI</div>
-            Shall I update Takeaway Cups from 40 to 640? ✅
-          </div>
-          <div class="msg msg-user">yes</div>
-          <div class="msg msg-bot">
-            <div class="msg-tag">ShelfAI</div>
-            Done! Takeaway Cups updated to 640 👍
-          </div>
-        </div>
-      </div>
+    <div style="display:flex;justify-content:center;padding:28px 24px 0">
+      <a href="https://calendly.com/palashrajput/30min/" target="_blank" class="btn-p">Book a Call</a>
     </div>
   </div>
 </div>
 
-<!-- LOGO SCROLL -->
-<div class="logos reveal">
-  <p class="logos-lbl">Connects with tools you already use</p>
-  <div class="logos-outer">
-    <div class="logos-track" id="logoTrack">
-      <span class="logo-item">Google Sheets</span>
-      <span class="logo-item">Airtable</span>
-      <span class="logo-item">Notion</span>
-      <span class="logo-item">Excel</span>
-      <span class="logo-item">Telegram</span>
-      <span class="logo-item">WhatsApp</span>
-      <span class="logo-item">Google Sheets</span>
-      <span class="logo-item">Airtable</span>
-      <span class="logo-item">Notion</span>
-      <span class="logo-item">Excel</span>
-      <span class="logo-item">Telegram</span>
-      <span class="logo-item">WhatsApp</span>
+<!-- TIME CALCULATOR -->
+<div class="wrap">
+  <p class="sec-lbl reveal">The Real Cost</p>
+  <h2 class="sec-h2 reveal">Still tracking inventory manually?<br><span class="hl-accent">Here's what it's costing you.</span></h2>
+  <p style="font-size:15px;color:var(--text-2);line-height:1.75;margin-top:8px" class="reveal">Every hour you spend on spreadsheets, stock checks, and reordering is money out of your pocket. See the real number.</p>
+
+  <div class="calc-wrap reveal">
+    <div class="calc-title">Your Inventory Time Cost</div>
+    <div class="calc-sub">Adjust the sliders to match your situation and see what manual inventory management is actually costing you per month.</div>
+
+    <div class="calc-row">
+      <div class="calc-field">
+        <label>Minutes spent on inventory daily</label>
+        <input type="range" class="calc-slider" id="calcMins" min="10" max="120" value="45" step="5" oninput="updateCalc()">
+        <div class="calc-val"><span id="calcMinsVal">45</span> <span>mins / day</span></div>
+      </div>
+      <div class="calc-field">
+        <label>Your hourly rate (or value of your time)</label>
+        <div style="position:relative">
+          <span style="position:absolute;left:14px;top:50%;transform:translateY(-50%);font-size:18px;font-weight:700;color:var(--text-3)">$</span>
+          <input type="number" class="calc-input" id="calcRate" value="35" min="10" max="500" oninput="updateCalc()" style="padding-left:32px">
+        </div>
+      </div>
+    </div>
+
+    <div class="calc-result">
+      <div class="calc-card bad">
+        <div class="calc-card-lbl">What you spend monthly</div>
+        <div class="calc-card-num" id="calcCost">$788</div>
+        <div class="calc-card-sub">in time wasted on manual inventory management</div>
+      </div>
+      <div class="calc-card good">
+        <div class="calc-card-lbl">ShelfAI costs</div>
+        <div class="calc-card-num">$79<span style="font-size:14px;font-weight:500;color:var(--green)">/mo</span></div>
+        <div class="calc-card-sub">all-inclusive — AI, hosting, support, daily alerts</div>
+      </div>
+    </div>
+
+    <div class="calc-verdict">
+      You are spending <strong id="calcX">10×</strong> more on manual inventory management than ShelfAI costs. — <strong id="calcSaving">You save $709/month</strong> switching to ShelfAI.
     </div>
   </div>
 </div>
@@ -530,75 +511,19 @@ footer{border-top:1px solid var(--border);background:var(--bg-2);padding:24px 40
     <div class="prob-card reveal">
       <div class="prob-icon">😬</div>
       <p class="prob-eyebrow">Problem #1</p>
-      <h3>You Find Out When It's Too Late</h3>
-      <p>You discover you are out of oat milk when a customer orders a flat white. You realise the takeaway cups are finished during the morning rush. By the time the problem is visible, the damage is already done — and it happens every week.</p>
+      <h3>You Only Find Out When It's Too Late</h3>
+      <p>You run out of something mid-day. A customer asks, and you have nothing. By the time you notice the problem, you have already lost the sale — and it keeps happening.</p>
     </div>
     <div class="prob-card reveal">
       <div class="prob-icon">📉</div>
       <p class="prob-eyebrow">Problem #2</p>
-      <h3>The Losses Are Small, Daily, and Invisible</h3>
-      <p>You over-order because you are not sure what you have. You under-order because you forgot to check. Items expire quietly in the back. None of it is a disaster on its own — but added up across a month, it is a significant amount of money leaving your business for no reason.</p>
+      <h3>You Are Losing Money Every Week Without Knowing</h3>
+      <p>Over-order and money sits on a shelf. Under-order and you lose sales. Items expire. Stock goes missing. None of it feels like a big deal — until you add it up at the end of the month.</p>
     </div>
   </div>
 </div>
 
 <div class="divider"></div>
-
-<!-- TIME CALCULATOR -->
-<div class="wrap">
-  <p class="sec-lbl reveal">The Real Cost</p>
-  <h2 class="sec-h2 reveal">How much is manual inventory<br><span class="hl-accent">actually costing you?</span></h2>
-  <p style="font-size:15px;color:var(--text-2);line-height:1.75;margin-top:8px" class="reveal">Most owners underestimate it. Calculate the real number below.</p>
-
-  <div class="calc-wrap reveal">
-    <div class="calc-title">Your Inventory Time Cost</div>
-    <div class="calc-sub">Adjust the sliders to match your situation and see what manual inventory management is actually costing you per month.</div>
-
-    <div class="calc-row">
-      <div class="calc-field">
-        <label>Minutes spent on inventory daily</label>
-        <input type="range" class="calc-slider" id="calcMins" min="10" max="120" value="45" step="5" oninput="updateCalc()">
-        <div class="calc-val"><span id="calcMinsVal">45</span> <span>mins / day</span></div>
-      </div>
-      <div class="calc-field">
-        <label>Your hourly rate (or value of your time)</label>
-        <div style="position:relative">
-          <span style="position:absolute;left:14px;top:50%;transform:translateY(-50%);font-size:18px;font-weight:700;color:var(--text-3)">$</span>
-          <input type="number" class="calc-input" id="calcRate" value="35" min="10" max="500" oninput="updateCalc()" style="padding-left:32px">
-        </div>
-      </div>
-    </div>
-
-    <div class="calc-result">
-      <div class="calc-card bad">
-        <div class="calc-card-lbl">What you spend monthly</div>
-        <div class="calc-card-num" id="calcCost">$788</div>
-        <div class="calc-card-sub">in time wasted on manual inventory management</div>
-      </div>
-      <div class="calc-card good">
-        <div class="calc-card-lbl">ShelfAI costs</div>
-        <div class="calc-card-num">$79<span style="font-size:14px;font-weight:500;color:var(--green)">/mo</span></div>
-        <div class="calc-card-sub">all-inclusive — AI, hosting, support, daily alerts</div>
-      </div>
-    </div>
-
-    <div class="calc-verdict">
-      You are spending <strong id="calcX">10×</strong> more on manual inventory management than ShelfAI costs. — <strong id="calcSaving">You save $709/month</strong> switching to ShelfAI.
-    </div>
-  </div>
-</div>
-
-<div class="divider"></div>
-
-<!-- VIDEO -->
-<div class="wrap" id="demo">
-  <p class="sec-lbl reveal">See It In Action</p>
-  <h2 class="sec-h2 reveal">Watch the full demo <span class="hl-accent">in under 2 minutes.</span></h2>
-  <p style="font-size:15px;color:var(--text-2);line-height:1.75;margin-top:8px" class="reveal">A real walkthrough showing stock being checked, updated, and alerted — all through a simple chat message.</p>
-  <div class="video-wrap reveal">
-    <iframe src="https://www.youtube.com/embed/7rKCJBFpZUw?rel=0" title="ShelfAI Demo" allowfullscreen allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
-  </div>
-</div>
 
 <div class="divider"></div>
 
@@ -746,7 +671,7 @@ footer{border-top:1px solid var(--border);background:var(--bg-2);padding:24px 40
       <div class="pfooter">
         <p class="ptimeline">Live in <strong>48–72 Hours</strong> <span>(a 30-minute kickoff call is all we need from you)</span></p>
         <div style="margin-top:18px;display:flex;align-items:center;gap:14px;flex-wrap:wrap">
-          <a href="https://calendly.com/palashrajput/30min/" target="_blank" class="btn-p">Book a Demo Call →</a>
+          <a href="https://calendly.com/palashrajput/30min/" target="_blank" class="btn-p">Book a Call</a>
         </div>
       </div>
     </div>
@@ -796,7 +721,7 @@ footer{border-top:1px solid var(--border);background:var(--bg-2);padding:24px 40
       <h2>Your inventory system already exists.<br>Let's make it work for you.</h2>
       <p class="sub">Stop checking spreadsheets manually. Stop discovering stockouts mid-service. ShelfAI gives your existing inventory a voice — and puts it in your pocket.</p>
       <div class="bcard-btns">
-        <a href="https://calendly.com/palashrajput/30min/" target="_blank" class="btn-p-light">Book a Free Demo Call →</a>
+        <a href="https://calendly.com/palashrajput/30min/" target="_blank" class="btn-p-light">Book a Call</a>
       </div>
       <div class="bcard-trust">
         <div class="trust-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Free — no commitment</div>
@@ -830,7 +755,7 @@ footer{border-top:1px solid var(--border);background:var(--bg-2);padding:24px 40
     <div class="footer-logo">Shelf<span>AI</span></div>
     <p class="footer-copy">© ShelfAI 2026</p>
     <div class="footer-links">
-      <a href="https://calendly.com/palashrajput/30min/" target="_blank">Book a Demo</a>
+      <a href="https://calendly.com/palashrajput/30min/" target="_blank">Book a Call</a>
     </div>
   </div>
 </footer>

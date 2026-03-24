@@ -467,7 +467,7 @@ footer{border-top:1px solid var(--border);background:var(--bg-2);padding:24px 40
       </div>
       <div class="calc-card good">
         <div class="calc-card-lbl">Shelf-AI costs</div>
-        <div class="calc-card-num">$49<span style="font-size:14px;font-weight:500;color:var(--green)">/mo</span></div>
+        <div class="calc-card-num">$29<span style="font-size:14px;font-weight:500;color:var(--green)">/mo</span></div>
         <div class="calc-card-sub">all-inclusive — AI, hosting, support, daily alerts</div>
       </div>
     </div>
@@ -655,11 +655,11 @@ footer{border-top:1px solid var(--border);background:var(--bg-2);padding:24px 40
         <div class="psub">We connect, configure, and maintain everything. You just send messages.</div>
         <div class="price-row">
           <div class="price-col">
-            <span class="price-col-num">$149</span>
+            <span class="price-col-num">$249</span>
             <span class="price-col-lbl">· One-time setup</span>
           </div>
           <div class="price-col">
-            <span class="price-col-num">$49<span class="price-col-mo">/mo</span></span>
+            <span class="price-col-num">$29<span class="price-col-mo">/mo</span></span>
             <span class="price-col-lbl">· Monthly · <span style="color:var(--green);font-weight:600">Cancel anytime</span></span>
           </div>
         </div>
@@ -849,7 +849,7 @@ function updateCalc() {
   const rate = parseFloat(document.getElementById('calcRate').value) || 35;
   document.getElementById('calcMinsVal').textContent = mins;
   const monthlyCost = Math.round((mins / 60) * rate * 30);
-  const shelfaiCost = 49;
+  const shelfaiCost = 29;
   const saving = Math.max(0, monthlyCost - shelfaiCost);
   const multiple = monthlyCost > 0 ? (monthlyCost / shelfaiCost).toFixed(1) : '1';
   document.getElementById('calcCost').textContent = '$' + monthlyCost.toLocaleString();
